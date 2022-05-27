@@ -1,0 +1,76 @@
+@import 'color'
+@import 'font'
+@import 'common'
+@import 'header'
+@import 'footer'
+
+section#frame-utama
+	&.tentang
+		background-image: url('../front_template/images/frame-utama/tentang-koperasi.png')
+	&.partner
+		background-image: url('../front_template/images/frame-utama/partner.png')
+	&.kontak
+		background-image: url('../front_template/images/frame-utama/kontak.png')
+	@extend .triple-bg-image-rules
+	margin-top: 76px
+	@media(max-width: 768px)
+		margin-top: 68px
+	.overlay
+		top: 0
+		left: 0
+		background-color: #000
+		opacity: .1
+	.container
+		min-height: calc(70vh - 71px)
+		@media(min-width: 992px) and (max-width: 1200px)
+			min-height: calc(40vh - 76px)
+		@media(min-width: 1200px)
+			min-height: calc(60vh - 76px)
+		h1
+			font-size: 50px
+			font-weight: 800
+			z-index: 1
+			@media(max-width: 992px)
+				font-size: 40px
+
+section#frame-kontak
+	h2.title
+		font-size: 40px
+		font-weight: 700
+		@media(max-width: 768px)
+			font-size: 35px
+	.btn-kirim
+		padding-top: 10px
+		padding-bottom: 10px
+		font-weight: 700
+		@extend .bg-green
+		&:hover,
+		&:focus,
+		&:active
+			@extend .bg-green-darker
+			box-shadow: 0 0 0 0.2rem rgb(59 187 112 / 0.5)
+	.box
+		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1)
+		border-radius: 8px
+		i
+			font-size: 4rem
+
+section#frame-lokasi
+	h2.title
+		font-size: 40px
+		font-weight: 700
+		@media(max-width: 768px)
+			font-size: 35px
+	.row
+		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1)
+		border-radius: 8px
+		p:not(.alamat)
+			font-size: 22px
+			@media(max-width: 992px)
+				font-size: 18px
+		.alamat
+			font-size: 20px
+			line-height: 30px
+			@media(min-width: 992px)
+				font-size: 27px
+				line-height: 40px

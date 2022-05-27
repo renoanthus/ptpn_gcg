@@ -1,0 +1,28 @@
+@import 'color'
+@import 'font'
+@import 'common'
+@import 'header'
+@import 'footer'
+
+.btn-backend
+	padding-top: 10px
+	padding-bottom: 10px
+	@extend .bg-green
+	&:hover,
+	&:focus,
+	&:active
+		@extend .bg-green-darker
+		box-shadow: 0 0 0 0.2rem rgb(59 187 112 / 0.5)
+
+#side-menu li
+	transition: .2s all
+	a
+		color: #E0E0E0 !important
+	&.activin,
+	&:hover,
+	&:active,
+	&:focus
+		border-radius: 4px
+		@extend .bg-56CCF2
+		a
+			color: #fff !important

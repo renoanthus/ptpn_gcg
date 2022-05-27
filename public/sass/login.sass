@@ -1,0 +1,45 @@
+@import "color"
+@import "common"
+@import "font"
+
+section#masuk
+	.inner
+		@media(min-width: 992px)
+			border-left: 3px solid rgba(46, 212, 122, 0.2)
+		h1
+			font-weight: 700
+			font-size: 2rem
+		button.btn-masuk
+			padding-top: 10px
+			padding-bottom: 10px
+			border-radius: 5px
+			@extend .bg-green
+			&:hover,
+			&:focus,
+			&:active
+				@extend .bg-green-darker
+				box-shadow: 0 0 0 0.2rem rgb(242 187 76 / 0.5)
+
+		form
+			.form-control
+				border-radius: 5px
+				border-color: #E8E8E8!important
+	.logo
+		figure
+			height: 300px
+			width: 300px
+			@media(max-width: 992px)
+				height: 150px
+				width: 150px
+			img
+				object-fit: contain
+		h1
+			font-size: 3rem
+			@media(max-width: 992px)
+				font-size: 2.5rem
+			font-weight: 600
+	.credit
+		@media(min-width: 992px)
+			position: absolute
+			bottom: 25px
+			left: 0

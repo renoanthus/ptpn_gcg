@@ -1,0 +1,15 @@
+.table thead th{
+    vertical-align: middle !important;
+    padding: 2px 3px 2px 3px;
+    text-align: center;
+}
+.table tbody td{
+    vertical-align: middle !important;
+    padding: 2px 3px 2px 3px;
+}
+td.kanan{
+    text-align: right;
+}
+table{
+    font-size: 12px;
+}

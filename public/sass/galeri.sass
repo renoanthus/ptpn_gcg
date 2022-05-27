@@ -1,0 +1,43 @@
+@import 'color'
+@import 'font'
+@import 'common'
+@import 'header'
+@import 'footer'
+
+section#frame-utama
+	&.galeri
+		background-image: url('../front_template/images/frame-utama/galeri.png')
+	@extend .triple-bg-image-rules
+	margin-top: 76px
+	@media(max-width: 768px)
+		margin-top: 68px
+	.overlay
+		top: 0
+		left: 0
+		background-color: #000
+		opacity: .1
+	.container
+		min-height: calc(70vh - 71px)
+		@media(min-width: 992px) and (max-width: 1200px)
+			min-height: calc(40vh - 76px)
+		@media(min-width: 1200px)
+			min-height: calc(60vh - 76px)
+		h1
+			font-size: 50px
+			font-weight: 800
+			z-index: 1
+			@media(max-width: 992px)
+				font-size: 40px
+
+section#frame-galeri
+		.isotope-filters
+			flex-wrap: wrap
+			button
+				border: 1px solid #BDBDBD
+				color: #BDBDBD
+				&:hover,
+				&:active,
+				&:focus,
+				&.active
+					border-color: #42D07D
+					color: #42D07D

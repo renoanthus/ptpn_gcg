@@ -1,0 +1,147 @@
+@import 'color'
+@import 'font'
+@import 'common'
+@import 'header'
+@import 'footer'
+
+section#frame-utama
+	&.tentang
+		background-image: url('../front_template/images/frame-utama/tentang-koperasi.png')
+	&.partner
+		background-image: url('../front_template/images/frame-utama/partner.png')
+	&.laporan-tahunan
+		background-image: url('../front_template/images/frame-utama/laporan-tahunan.png')
+	&.berita
+		background-image: url('../front_template/images/frame-utama/berita.png')
+	@extend .triple-bg-image-rules
+	margin-top: 76px
+	@media(max-width: 768px)
+		margin-top: 68px
+	.overlay
+		top: 0
+		left: 0
+		background-color: #000
+		opacity: .1
+	.container
+		min-height: calc(70vh - 71px)
+		@media(min-width: 992px) and (max-width: 1200px)
+			min-height: calc(40vh - 76px)
+		@media(min-width: 1200px)
+			min-height: calc(60vh - 76px)
+		h1
+			font-size: 50px
+			font-weight: 800
+			z-index: 1
+			@media(max-width: 992px)
+				font-size: 40px
+
+section#frame-berita
+	h2.title
+		font-size: 40px
+		font-weight: 700
+		@media(max-width: 768px)
+			font-size: 35px
+	.fig-update
+		border-radius: 6px
+		overflow: hidden
+		height: 400px
+		img
+			object-fit: cover
+		figcaption
+			top: 0
+			left: 0
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%)
+			.title
+				font-size: 21px
+				overflow: hidden
+				font-weight: 700
+				@extend .elipsis-2
+	.card
+		border-radius: 6px
+		overflow: hidden
+		box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08)
+		&.beda
+			figure
+				@media(min-width: 992px)
+					border-radius: 6px
+				overflow: hidden
+		.card-header
+			figure
+				height: 170px
+				img
+					object-fit: cover
+		.card-body
+			.title
+				font-size: 21px
+				overflow: hidden
+				font-weight: 700
+				@extend .elipsis-2
+			.sub
+				overflow: hidden
+				@extend .elipsis-3
+				@extend .mulish-regular
+				@extend .color-BDBDBD
+				font-size: 18px
+		.card-footer
+			.icon
+				height: 20px
+				width: 20px
+				border-radius: 50px
+
+section#frame-berita-detail
+	margin-top: 76px
+	@media(max-width: 768px)
+		margin-top: 68px
+	h2.title
+		font-size: 40px
+		font-weight: 700
+		@media(max-width: 768px)
+			font-size: 35px
+	.bulat
+		height: 20px
+		width: 20px
+		border-radius: 50px
+	.card
+		border-radius: 6px
+		overflow: hidden
+		&:not(.khusus)
+			box-shadow: 0px 8px 20px 	rgba(0, 0, 0, 0.08)
+		&.beda
+			figure
+				@media(min-width: 992px)
+					border-radius: 6px
+				overflow: hidden
+		.card-header
+			figure
+				height: 170px
+				&.khusus
+					height: 300px
+					border-radius: 6px
+					overflow: hidden
+				img
+					object-fit: cover
+		.card-body
+			&.khusus
+				*
+					margin-bottom: 1rem
+					@extend .mulish-regular
+					@extend .color-BDBDBD
+					line-height: 36px
+					&:not(h1,h2,h3,h4,h5,h6)
+						font-size: 18px
+			.title
+				font-size: 21px
+				overflow: hidden
+				font-weight: 700
+				@extend .elipsis-2
+			.sub
+				font-size: 18px
+				overflow: hidden
+				@extend .elipsis-3
+				@extend .mulish-regular
+				@extend .color-BDBDBD
+		.card-footer
+			.icon
+				height: 20px
+				width: 20px
+				border-radius: 50px

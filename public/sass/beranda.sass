@@ -1,0 +1,115 @@
+@import 'color'
+@import 'font'
+@import 'common'
+@import 'header'
+@import 'footer'
+
+section#frame-utama
+	background-image: url('../front_template/images/frame-utama/koperasi-perkebunan-bupulu-lomour.png')
+	@extend .triple-bg-image-rules
+	margin-top: 76px
+	@media(max-width: 768px)
+		margin-top: 68px
+	.container
+		min-height: calc(90vh - 71px)
+		@media(min-width: 992px) and (max-width: 1200px)
+			min-height: calc(60vh - 76px)
+		@media(min-width: 1200px)
+			min-height: calc(80vh - 76px)
+		h1
+			font-size: 50px
+			font-weight: 800
+			@media(max-width: 992px)
+				font-size: 40px
+
+section#frame-data
+	top: -70px
+	.wrapper
+		box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08)
+		border-radius: 6px
+		.kiri,
+		.kanan
+			width: 100%
+			@media(min-width: 992px)
+				width: 50%
+		.kiri
+			@media(min-width: 992px)
+				border-right: 2px dashed #BDBDBD
+			@media(max-width: 992px)
+				border-bottom: 2px dashed #BDBDBD
+
+section#frame-berita
+	h2.title
+		font-size: 30px
+		font-weight: 700
+	.card
+		border-radius: 6px
+		overflow: hidden
+		box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08)
+		.card-header
+			figure
+				height: 170px
+				img
+					object-fit: cover
+		.card-body
+			.title
+				font-size: 21px
+				overflow: hidden
+				font-weight: 700
+				@extend .elipsis-2
+			.sub
+				// font-size: 14px
+				overflow: hidden
+				@extend .elipsis-3
+				@extend .mulish-regular
+				@extend .color-BDBDBD
+				font-size: 18px
+		.card-footer
+			.icon
+				height: 20px
+				width: 20px
+				border-radius: 50px
+
+section#frame-tentang
+	h2.title
+		font-size: 40px
+		font-weight: 700
+		@media(max-width: 768px)
+			font-size: 35px
+	.row
+		figure
+			height: 350px
+			width: 100%
+			@media(min-width: 992px)
+				width: 75%
+			overflow: hidden
+			border-radius: 10px
+			img
+				object-fit: cover
+		p
+			line-height: 36px
+
+section#frame-pertanyaan
+	h2.title
+		font-size: 25px
+		font-weight: 700
+
+section#frame-lokasi
+	h2.title
+		font-size: 40px
+		font-weight: 700
+		@media(max-width: 768px)
+			font-size: 35px
+	.row
+		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1)
+		border-radius: 8px
+		p:not(.alamat)
+			font-size: 22px
+			@media(max-width: 992px)
+				font-size: 18px
+		.alamat
+			font-size: 20px
+			line-height: 30px
+			@media(min-width: 992px)
+				font-size: 27px
+				line-height: 40px

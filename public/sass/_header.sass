@@ -1,0 +1,123 @@
+header
+	.navbar-area
+		background-color: #fff!important
+		box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.06)
+		.logo
+			img
+				@media(max-width: 992px)
+					height: 35px
+		#navbarTwo
+			ul
+				li
+					.has-auth
+						@media(min-width: 1200px)
+							font-size: 14px
+					a
+						@media(min-width: 768px) and (max-width: 1200px)
+							font-size: 14px
+						opacity: 1
+						&:before
+							display: none
+						&.btn-masuk
+							padding-top: 10px
+							padding-bottom: 10px
+							font-weight: 700
+							@extend .bg-green
+							&:hover,
+							&:focus,
+							&:active
+								@extend .bg-green-darker
+								box-shadow: 0 0 0 0.2rem rgb(59 187 112 / 0.5)
+					&.not-dropdown
+						a
+							@extend .color-BDBDBD
+							transition: .2s all
+							&:hover,
+							&:focus,
+							&:active
+								@extend .color-42D07D
+					&.active
+						a
+							@extend .color-42D07D
+					&.tentang-mobile,
+					&.profil-mobile
+						button
+							@extend .color-BDBDBD
+							box-shadow: none
+							.inner
+								figure.foto-pengguna
+									height: 35px
+									width: 35px
+									border-radius: 50px
+									overflow: hidden
+									img
+										object-fit: cover
+								.nama
+									max-width: 150px
+					&.tentang
+						button
+							box-shadow: none
+							&.dropdown-toggle
+								&:after
+									display: none
+						.dropdown-menu
+							.segitiga
+								height: 20px
+								width: 20px
+								top: -10px
+								right: 45%
+								z-index: 1
+								transform: rotate(45deg)
+								box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2)
+							.segitiga-clear
+								height: 20px
+								top: 0
+								right: 0
+								z-index: 2
+							box-shadow: 0 0 10px rgba(0,0,0,.2)
+							width: 200px
+							.dropdown-item
+								&:hover,
+								&:focus,
+								&:active
+									background: none
+					&.profil
+						.inner
+							figure.foto-pengguna
+								height: 35px
+								width: 35px
+								border-radius: 50px
+								overflow: hidden
+								img
+									object-fit: cover
+							.nama
+								max-width: 150px
+								@media(max-width: 1200px)
+									font-size: 14px
+						button
+							box-shadow: none
+							&.dropdown-toggle
+								&:after
+									display: none
+						.dropdown-menu
+							.segitiga
+								height: 20px
+								width: 20px
+								top: -10px
+								right: 5px
+								z-index: 1
+								transform: rotate(45deg)
+								box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2)
+							.segitiga-clear
+								height: 20px
+								top: 0
+								right: 1px
+								z-index: 2
+							box-shadow: 0 0 10px rgba(0,0,0,.2)
+							width: 200px
+							.dropdown-item
+								&:hover,
+								&:focus,
+								&:active
+									background: none
+						

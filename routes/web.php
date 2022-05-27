@@ -12,7 +12,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
+Route::get('/dev/clear-cache', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    return "Cache is cleared";
+});
+
+Auth::routes();
+
+Route::get('/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
+Route::get('/callback', 'Auth\LoginController@handleProviderCallback');

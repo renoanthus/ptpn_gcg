@@ -1,0 +1,259 @@
+.color-gray {
+  color: #4f4f4f !important;
+}
+
+.color-dark {
+  color: #18191F !important;
+}
+
+.color-orange {
+  color: #F2C94C !important;
+}
+
+.color-333 {
+  color: #333 !important;
+}
+
+.color-4f4f4f {
+  color: #4F4F4F !important;
+}
+
+.color-6E798C {
+  color: #6E798C !important;
+}
+
+.color-828282 {
+  color: #828282 !important;
+}
+
+.color-E0E0E0 {
+  color: #E0E0E0 !important;
+}
+
+.color-4A5568 {
+  color: #4A5568 !important;
+}
+
+.color-BDBDBD {
+  color: #BDBDBD !important;
+}
+
+.bg-orange {
+  background-color: #F2C94C !important;
+}
+
+.bg-orange-darker {
+  background-color: #f2bb4c !important;
+}
+
+.bg-blue {
+  background-color: #2F80ED !important;
+}
+
+.bg-blue-darker {
+  background-color: #2f90ed !important;
+}
+
+.bg-C4C4C4 {
+  background-color: #C4C4C4 !important;
+}
+
+.bg-F4F4F4 {
+  background-color: #F4F4F4 !important;
+}
+
+.bg-green, section#masuk .inner button.btn-masuk {
+  background-color: #42D07D !important;
+}
+
+.bg-green-darker, section#masuk .inner button.btn-masuk:hover, section#masuk .inner button.btn-masuk:focus, section#masuk .inner button.btn-masuk:active {
+  background-color: #3bbb70 !important;
+}
+
+@media (min-width: 992px) {
+  .w-lg-75 {
+    width: 75% !important;
+  }
+}
+
+.rounded-10 {
+  border-radius: 10px;
+}
+
+.triple-bg-image-rules {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.modal .modal-header button {
+  outline: 0;
+}
+
+.validation-wrapper span.validate-icon {
+  top: 7.5px;
+  right: 10px;
+}
+
+.profil-backdrop {
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 0.2s all;
+}
+
+.elipsis-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.elipsis-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.manrope-normal {
+  font-family: "Manrope", sans-serif;
+}
+
+.poppins-normal {
+  font-family: "Poppins", sans-serif;
+}
+
+.playfair-display-italic {
+  font-family: "Playfair Display", serif;
+}
+
+.dm-sans-regular {
+  font-family: "DM Sans", sans-serif;
+}
+
+.mulish-regular {
+  font-family: "Mulish", sans-serif;
+}
+
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+}
+
+.open-sans-regular {
+  font-family: "Open Sans", sans-serif;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+}
+
+.font-10 {
+  font-size: 10px;
+}
+
+.font-11 {
+  font-size: 11px;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-13 {
+  font-size: 13px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-15 {
+  font-size: 15px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-17 {
+  font-size: 17px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-19 {
+  font-size: 19px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-21 {
+  font-size: 21px;
+}
+
+.font-22 {
+  font-size: 22px;
+}
+
+.font-23 {
+  font-size: 23px;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+@media (min-width: 992px) {
+  section#masuk .inner {
+    border-left: 3px solid rgba(46, 212, 122, 0.2);
+  }
+}
+section#masuk .inner h1 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+section#masuk .inner button.btn-masuk {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+section#masuk .inner button.btn-masuk:hover, section#masuk .inner button.btn-masuk:focus, section#masuk .inner button.btn-masuk:active {
+  box-shadow: 0 0 0 0.2rem rgba(242, 187, 76, 0.5);
+}
+section#masuk .inner form .form-control {
+  border-radius: 5px;
+  border-color: #E8E8E8 !important;
+}
+section#masuk .logo figure {
+  height: 300px;
+  width: 300px;
+}
+@media (max-width: 992px) {
+  section#masuk .logo figure {
+    height: 150px;
+    width: 150px;
+  }
+}
+section#masuk .logo figure img {
+  object-fit: contain;
+}
+section#masuk .logo h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+@media (max-width: 992px) {
+  section#masuk .logo h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 992px) {
+  section#masuk .credit {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+  }
+}
+
+/*# sourceMappingURL=login.css.map */

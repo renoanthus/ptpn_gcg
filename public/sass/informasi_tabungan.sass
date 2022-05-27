@@ -1,0 +1,59 @@
+@import 'color'
+@import 'font'
+@import 'common'
+@import 'header'
+@import 'footer'
+
+section#frame-utama
+	&.informasi-tabungan
+		background-image: url('../front_template/images/frame-utama/notifikasi.png')
+	@extend .triple-bg-image-rules
+	margin-top: 76px
+	@media(max-width: 768px)
+		margin-top: 68px
+	.overlay
+		top: 0
+		left: 0
+		background-color: #000
+		opacity: .1
+	.container
+		min-height: calc(70vh - 71px)
+		@media(min-width: 992px) and (max-width: 1200px)
+			min-height: calc(40vh - 76px)
+		@media(min-width: 1200px)
+			min-height: calc(60vh - 76px)
+		h1
+			font-size: 50px
+			font-weight: 800
+			z-index: 1
+			@media(max-width: 992px)
+				font-size: 40px
+
+section#frame-informasi-tabungan,
+#modal-penarikan
+	.btn-penarikan,
+	.btn-konfirmasi
+		padding-top: 10px
+		padding-bottom: 10px
+		@extend .bg-green
+		&:hover,
+		&:focus,
+		&:active
+			@extend .bg-green-darker
+			box-shadow: 0 0 0 0.2rem rgb(59 187 112 / 0.5)
+	.total-tabungan
+		a
+			@extend .bg-F2F2F2
+			*
+				@extend .color-333
+				transition: .2s all
+			&.active,
+			&:hover,
+			&:focus,
+			&:active
+				@extend .bg-green
+				*
+					color: #fff !important
+			h1
+				font-size: 31px
+
