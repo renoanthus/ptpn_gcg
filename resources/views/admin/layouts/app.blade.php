@@ -80,7 +80,7 @@
 
             <!-- LOGO -->
             <div class="logo-box">
-                <a href="{{ route('dashboard') }}" class="logo logo-dark text-center">
+                <a href="{{ route('admin.dashboard') }}" class="logo logo-dark text-center">
                     <span class="logo-lg">
                         <img src="{{ asset('assets') }}/images/logo/logo ptpn 13.png" alt="" height="50">
                     </span>
@@ -88,7 +88,7 @@
                         <img src="{{ asset('assets') }}/images/logo/logo ptpn 13.png" alt="" height="24">
                     </span>
                 </a>
-                <a href="{{ route('dashboard') }}" class="logo logo-light text-center">
+                <a href="{{ route('admin.dashboard') }}" class="logo logo-light text-center">
                     <span class="logo-lg">
                         <img src="{{ asset('assets') }}/images/logo/logo ptpn 13.png" alt="" height="50">
                     </span>

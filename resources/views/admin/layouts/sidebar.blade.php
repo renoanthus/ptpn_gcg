@@ -42,35 +42,22 @@
                 <li class="menu-title">Navigation</li>
                 <li id="menu_aset">
                     <a href="javascript: void(0);">
-                        <i class="mdi mdi-pine-tree"></i>
-                        <span> Kelapa Sawit </span>
+                        <i class="mdi mdi-file"></i>
+                        <span> Master Data </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level nav" aria-expanded="false">
                         <li>
-                            <a href="javascript: void(0);" aria-expanded="false">Aset
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <ul class="nav-third-level nav" aria-expanded="false">
-                                <li>
-                                    <a href="{{ route('admin.wilayah.index') }}">Wilayah</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('admin.tahun_tanam.index') }}">Tahun Tanam</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('admin.status_tanam.index') }}">Status Tanam</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.produksi.index') }}">Produksi</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.pica.index') }}">PICA</a>
+                            <a href="{{ route('admin.aspek.index') }}">Aspek</a>
                         </li>
                     </ul>
                 </li>
+                {{-- <li>
+                    <a href="{{ route('admin.pengguna.index') }}">
+                        <i class="mdi mdi-account-multiple-outline"></i>
+                        <span> Pengguna </span>
+                    </a>
+                </li> --}}
                 <li>
                     <a href="{{ route('admin.pengguna.index') }}">
                         <i class="mdi mdi-account-multiple-outline"></i>

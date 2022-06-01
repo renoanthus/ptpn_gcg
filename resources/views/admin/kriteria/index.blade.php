@@ -13,10 +13,24 @@
 <link href="{{asset('adminto/dist/')}}/assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="{{ asset('sass/custom.css') }}">
 
+<style>
+    .kotak_hijau {
+        position: relative;
+        width: 15px;
+        left: 0px;
+        top: 0px;
+
+        /* Color System */
+
+        background: #42D07D;
+        border-radius: 6px 0px 0px 6px;
+
+    }
+</style>
 
 @endsection
 @section('title')
-Produksi - Afdeling
+Kriteria
 @endsection
 @section('content')
 <div class="row">
@@ -46,47 +60,21 @@ Produksi - Afdeling
         @endif
         <div id="addData" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-md">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Tambah Produksi</h4>
+                        <h4 class="modal-title" id="myModalLabel">Tambah Data</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
                     <div class="modal-body">
                         <form id="formAdd" enctype="multipart/form-data" data-parsley-validate="" novalidate="">
                             @csrf
                             <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label>Afdeling :</label>
-                                    <select id="f_afdeling_id" class="form-control select2">
-                                        <option value="">Pilih Afdeling</option>
-                                        @foreach ($afdeling as $item)
-                                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
-
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label>Blok :</label>
-                                    <select id="f_blok_id" name="blok_id" class="form-control select2">
-                                        <option value="">Pilih Blok</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label>Tanggal</label>
-                                    <input type="date" parsley-trigger="change" placeholder="Masukkan Tanggal"
-                                        name="tanggal" id="tanggal" class="form-control">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label>Produksi</label>
-                                    <input type="number" min="0" parsley-trigger="change"
-                                        placeholder="Masukkan Produksi" name="produksi" id="produksi"
-                                        class="form-control">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label>Tandan</label>
-                                    <input type="number" min="0" parsley-trigger="change" placeholder="Masukkan Tandan"
-                                        name="tandan" id="tandan" class="form-control">
+                                <input type="hidden" name="id" id="id">
+                                <div class="form-group col-md-12">
+                                    <label>Nama</label>
+                                    <input type="text" parsley-trigger="change" placeholder="Masukkan Nama" name="nama"
+                                        id="nama" class="form-control">
                                 </div>
                             </div>
                     </div>
@@ -98,62 +86,37 @@ Produksi - Afdeling
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div>
-        <div id="importData" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Import Data</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="{{route('admin.produksi.import')}}" enctype="multipart/form-data" method="POST"
-                            data-parsley-validate="" novalidate="">
-                            @csrf
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label>Berkas</label>
-                                    <input type="file" id="file" class="form-control" accept="excel/*" name="file"
-                                        placeholder="Berkas" />
-                                </div>
+        <h4 style="font-family: Roboto">Overview</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box py-0 px-0 ml-2">
+                    <span>
+                        <div class="row">
+                            <div class="col-1 kotak_hijau"></div>
+                            <div class="col">
+                                <h3 class="">Coming Soong</h3>
                             </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary waves-effect waves-light">Simpan</button>
-                        </form>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
+                        </div>
+                    </span>
+                </div>
+            </div>
         </div>
         <div class="card-box">
             <div class="row head_table">
                 <div class="col-md-6">
-                    <h4 class="mt-0 header-title">Produksi Kebun {{ $kebun->nama }}</h4>
+                    <h4 class="mt-0 header-title">Aspek </h4>
                 </div>
                 <div class="col-md-2 ml-auto mb-2">
                     <button class="btn btn-block btn-primary mt-0" data-toggle="modal" data-target="#addData"><i
-                            class="mdi mdi-plus"></i> Produksi</button>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-block btn-success" data-toggle="modal" data-target="#importData"><i
-                            class="mdi mdi-import"></i> Impor Data</button>
+                            class="mdi mdi-plus"></i> Tambah Data</button>
                 </div>
             </div>
             <table id="datatable" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th rowspan="2">No.</th>
-                        <th rowspan="2">Afdeling</th>
-                        <th rowspan="1" colspan="2">Produksi</th>
-                        <th rowspan="1" colspan="2">Tandan</th>
-                        <th rowspan="2">Aksi</th>
-                    </tr>
-                    <tr>
-                        <th>Hari ini</th>
-                        <th>S/D Hari ini</th>
-                        <th>Hari ini</th>
-                        <th>S/D Hari ini</th>
+                        <th>No.</th>
+                        <th>Aksi</th>
+                        <th>Nama</th>
                     </tr>
                 </thead>
             </table>
@@ -181,17 +144,13 @@ Produksi - Afdeling
 
 <script type="text/javascript">
     $(".select2").select2();
-    $("#menu_aset").addClass('active');
-    $("#menu_aset > a").addClass('active');
-    $("#menu_aset > ul").addClass('active mm-show');
-    $("#menu_aset_kelapa").addClass('mm-active');
     $(function() {
         window.table = $('#datatable').DataTable({
             processing: true,
             serverSide: true,
             pageLength: 25,
             ajax: {
-                url: "{{ route('admin.produksi.kebun_data',$kebun->id)}}",
+                url: "{{ route('admin.sub.data',$parent_id)}}",
             },
             columns: [
                 {   
@@ -200,45 +159,17 @@ Produksi - Afdeling
                     width:'10px',
                 },
                 {
-                    data: 'nama',
-                    name: 'nama',
-                    defaultContent: '-', 
-                    orderable: false, 
-                },
-                {
-                    data: 'produksi_today',
-                    name: 'produksi_today',
-                    defaultContent: '-', 
-                    orderable: false,
-                    className:'kanan',
-                },
-                {
-                    data: 'produksi',
-                    name: 'produksi',
-                    defaultContent: '-', 
-                    orderable: false,
-                    className:'kanan',
-                },
-                {
-                    data: 'tandan_today',
-                    name: 'tandan_today',
-                    defaultContent: '-', 
-                    orderable: false,
-                    className:'kanan',
-                },
-                {
-                    data: 'tandan',
-                    name: 'tandan',
-                    defaultContent: '-', 
-                    orderable: false,
-                    className:'kanan',
-                },
-                {
                     data: 'aksi',
                     name: 'aksi',
                     className : 'text-center',
                     width:'160px',
                     orderable: false
+                },
+                {
+                    data: 'nama',
+                    name: 'nama',
+                    defaultContent: '-', 
+                    orderable: false, 
                 },
             ]
         });
@@ -247,7 +178,7 @@ Produksi - Afdeling
             // let d = $('#formAdd').serialize();
             // var formData = new FormData($(this)[0]);
             $.ajax({
-                url: "{{ route('admin.produksi.store') }}",
+                url: "{{ route('admin.sub.store',$parent_id) }}",
                 type: "POST",
                 data: new FormData(this),
                 dataType: 'JSON',
@@ -278,6 +209,64 @@ Produksi - Afdeling
             return false;
         });
     });
+    
+    function deleteData(id){
+        Swal.fire({
+            title: 'Anda Yakin?',
+            text: 'Data Akan Dihapus Secara Permanen',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, Hapus'
+        }).then(result =>{
+            if(result.value){
+                $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('admin.sub.index',$parent_id) }}/delete/"+id,
+                    data: {
+                        "id": id,
+                        "_token": "{{ csrf_token() }}",
+                    },
+                    dataType: "JSON",
+                })
+                .done(function(response){
+                    if (response.status) {
+                        Swal.fire("Sukses", response.message, "success");
+                        setTimeout(function(){
+                            table.ajax.reload()
+                        }, 500)
+                    } else {
+                        Swal.fire("Gagal", response.message, "warning");
+                    }
+                })
+                .fail(function(jqXHR, textStatus, errorThrown){
+                    if (jqXHR.status == 401) {
+                        Swal.fire(textStatus, errorThrown, "error");
+                    }
+                });
+            }
+        });
+    }
+
+    function editData(id){
+        $.ajax({
+            url : "{{ route('admin.sub.index',$parent_id) }}/detail/"+id,
+            type : "GET",
+            datatype : "JSON",
+            success : function(data){
+                $('#id').val(data.id)
+                $('#nama').val(data.nama)
+                $('#myModalLabel').html('Ubah Data')
+                $('#addData').modal('show');
+            }
+        });
+    }
 </script>
 @include('admin.shortcut_js')
 @endsection
