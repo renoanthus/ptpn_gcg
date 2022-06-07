@@ -36,15 +36,28 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     Route::get('/pengguna', [UserController::class,'index'])->name('admin.pengguna.index');
 
-    Route::get('/aspek', [AspekController::class,'index'])->name('admin.aspek.index');
-    Route::get('/aspek/data', [AspekController::class,'data'])->name('admin.aspek.data');
-    Route::get('/aspek/detail/{id}', [AspekController::class,'detail'])->name('admin.aspek.detail');
-    Route::post('/aspek/store', [AspekController::class,'store'])->name('admin.aspek.store');
-    Route::post('/aspek/delete/{id}', [AspekController::class,'delete'])->name('admin.aspek.delete');
+    Route::get('/aspek-1', [AspekController::class,'index1'])->name('admin.aspek.index1');
+    Route::get('/aspek-1/data', [AspekController::class,'data1'])->name('admin.aspek.data1');
+    Route::get('/aspek-1/detail/{id}', [AspekController::class,'detail1'])->name('admin.aspek.detail1');
+    Route::post('/aspek-1/store', [AspekController::class,'store1'])->name('admin.aspek.store1');
+    Route::post('/aspek-1/delete/{id}', [AspekController::class,'delete1'])->name('admin.aspek.delete1');
 
-    Route::get('/sub/{parent_id}', [AspekController::class,'indexSub'])->name('admin.sub.index');
-    Route::get('/sub/{parent_id}/data', [AspekController::class,'dataSub'])->name('admin.sub.data');
-    Route::get('/sub/{parent_id}/detail/{id}', [AspekController::class,'detailSub'])->name('admin.sub.detail');
-    Route::post('/sub/{parent_id}/store', [AspekController::class,'storeSub'])->name('admin.sub.store');
-    Route::post('/sub/{parent_id}/delete/{id}', [AspekController::class,'deleteSub'])->name('admin.sub.delete');
+    Route::get('/aspek-2/{parent_id}', [AspekController::class,'index2'])->name('admin.aspek.index2');
+    Route::get('/aspek-2/{parent_id}/data', [AspekController::class,'data2'])->name('admin.aspek.data2');
+    Route::get('/aspek-2/{parent_id}/detail/{id}', [AspekController::class,'detail2'])->name('admin.aspek.detail2');
+    Route::post('/aspek-2/{parent_id}/store', [AspekController::class,'store2'])->name('admin.aspek.store2');
+    Route::post('/aspek-2/{parent_id}/delete/{id}', [AspekController::class,'delete2'])->name('admin.aspek.delete2');
+
+    Route::get('/aspek-3/{parent_id}', [AspekController::class,'index3'])->name('admin.aspek.index3');
+    Route::get('/aspek-3/{parent_id}/data', [AspekController::class,'data3'])->name('admin.aspek.data3');
+    Route::get('/aspek-3/{parent_id}/detail/{id}', [AspekController::class,'detail3'])->name('admin.aspek.detail3');
+    Route::post('/aspek-3/{parent_id}/store', [AspekController::class,'store3'])->name('admin.aspek.store3');
+    Route::post('/aspek-3/{parent_id}/delete/{id}', [AspekController::class,'delete3'])->name('admin.aspek.delete3');
+
+    Route::get('/aspek-4/{parent_id}', [AspekController::class,'index4'])->name('admin.aspek.index4');
+    Route::get('/aspek-4/{parent_id}/data', [AspekController::class,'data4'])->name('admin.aspek.data4');
+    Route::get('/aspek-4/{parent_id}/detail/{id}', [AspekController::class,'detail4'])->name('admin.aspek.detail4');
+    Route::post('/aspek-4/{parent_id}/store', [AspekController::class,'store4'])->name('admin.aspek.store4');
+    Route::post('/aspek-4/{parent_id}/delete/{id}', [AspekController::class,'delete4'])->name('admin.aspek.delete4');
+
 });

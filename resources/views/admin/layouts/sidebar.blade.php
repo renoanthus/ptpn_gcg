@@ -40,15 +40,15 @@
 
             <ul class="itemsmenu" id="side-menu">
                 <li class="menu-title">Navigation</li>
-                <li id="menu_aset">
+                <li id="menu_master">
                     <a href="javascript: void(0);">
                         <i class="mdi mdi-file"></i>
                         <span> Master Data </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level nav" aria-expanded="false">
-                        <li>
-                            <a href="{{ route('admin.aspek.index') }}">Aspek</a>
+                        <li id="menu_aspek">
+                            <a href="{{ route('admin.aspek.index1') }}">Aspek</a>
                         </li>
                     </ul>
                 </li>

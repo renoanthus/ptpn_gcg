@@ -30,7 +30,7 @@
 
 @endsection
 @section('title')
-Aspek
+Aspek - {{ App\Models\Bantuan::wordCutString($parent->nama, 0 , 10) }}
 @endsection
 @section('content')
 <div class="row">
@@ -103,12 +103,11 @@ Aspek
         </div>
         <div class="card-box">
             <div class="row head_table">
-                <div class="col-md-6">
-                    <h4 class="mt-0 header-title">Aspek </h4>
+                <div class="col-md-2 mr-auto mb-2">
+                    <a href="{{ route('admin.aspek.index2',$parent->id) }}" class="btn btn-block btn-warning mt-0"><i class="mdi mdi-arrow-left"></i> Kembali</a>
                 </div>
                 <div class="col-md-2 ml-auto mb-2">
-                    <button class="btn btn-block btn-primary mt-0" data-toggle="modal" data-target="#addData"><i
-                            class="mdi mdi-plus"></i> Tambah Data</button>
+                    <button class="btn btn-block btn-primary mt-0" onclick="addData()"><i class="mdi mdi-plus"></i> Tambah Data</button>
                 </div>
             </div>
             <table id="datatable" class="table table-bordered table-striped">
@@ -144,13 +143,19 @@ Aspek
 
 <script type="text/javascript">
     $(".select2").select2();
+    // $("#menu_master").toggle();
+    $(document).ready(function () {
+        $("#menu_master > a").addClass('mm-active');
+        $("#menu_master > a").attr('aria-expanded', true);
+        $("#menu_aspek").addClass('mm-active');
+    });
     $(function() {
         window.table = $('#datatable').DataTable({
             processing: true,
             serverSide: true,
             pageLength: 25,
             ajax: {
-                url: "{{ route('admin.aspek.data')}}",
+                url: "{{ route('admin.aspek.data3',$parent->id)}}",
             },
             columns: [
                 {   
@@ -175,10 +180,8 @@ Aspek
         });
         $('#formAdd').on('submit', function(e){
             e.preventDefault();
-            // let d = $('#formAdd').serialize();
-            // var formData = new FormData($(this)[0]);
             $.ajax({
-                url: "{{ route('admin.aspek.store') }}",
+                url: "{{ route('admin.aspek.store3',$parent->id) }}",
                 type: "POST",
                 data: new FormData(this),
                 dataType: 'JSON',
@@ -228,7 +231,7 @@ Aspek
                 });
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('admin.aspek.index') }}/delete/"+id,
+                    url: "{{ route('admin.aspek.index3',$parent->id) }}/delete/"+id,
                     data: {
                         "id": id,
                         "_token": "{{ csrf_token() }}",
@@ -254,9 +257,15 @@ Aspek
         });
     }
 
+    function addData(){
+        $('#id').val('')
+        $('#nama').val('')
+        $('#myModalLabel').html('Tambah Data')
+        $('#addData').modal('show');
+    }
     function editData(id){
         $.ajax({
-            url : "{{ route('admin.aspek.index') }}/detail/"+id,
+            url : "{{ route('admin.aspek.index3',$parent->id) }}/detail/"+id,
             type : "GET",
             datatype : "JSON",
             success : function(data){
@@ -268,5 +277,4 @@ Aspek
         });
     }
 </script>
-@include('admin.shortcut_js')
 @endsection
